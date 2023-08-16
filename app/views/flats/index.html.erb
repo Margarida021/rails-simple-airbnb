@@ -1,0 +1,23 @@
+<div class="text-center mt-3">
+  <h1>All our Flats</h1>
+  <p>Showing all <%= Flat.count %> flats.</p>
+</div>
+<div class="container justify-content-center mb-3">
+  <div class="row gy-3">
+    <% @flats.each do |flat| %>
+      <div class="col-3">
+        <div class="card" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h2><%= flat.name %></h2>
+            <p><%= flat.address %></p>
+            <div class="d-flex">
+              <p class="flex-grow-1"><strong><%= flat.price_per_night %></strong> <i class="fa-solid fa-euro-sign"></i></p>
+              <p><i class="fa-solid fa-person"></i> <%= flat.number_of_guests %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
